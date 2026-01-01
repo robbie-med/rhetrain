@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PO Reconditioning Plan</title>
+  <meta name="description" content="A gradual regimen for regaining oral intake (PO) after prolonged underuse, with checklists and notes that save on your device." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#121a24;
+      --card2:#0f1620;
+      --text:#e8eef7;
+      --muted:#b6c3d6;
+      --line:#223042;
+      --accent:#6aa9ff;
+      --good:#3ddc97;
+      --warn:#ffcc66;
+      --bad:#ff6b6b;
+      --shadow: 0 12px 32px rgba(0,0,0,.35);
+      --radius:16px;
+      --radius2:12px;
+      --max: 940px;
+      --tap: 52px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f4f7fb;
+        --card:#ffffff;
+        --card2:#f7f9fc;
+        --text:#152233;
+        --muted:#516173;
+        --line:#d8e2f0;
+        --accent:#1f6fff;
+        --shadow: 0 10px 22px rgba(15,34,66,.12);
+      }
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 84%, #000 16%));
+      color:var(--text);
+      font-family:var(--font);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header.site{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 70%, transparent 30%);
+      border-bottom:1px solid color-mix(in srgb, var(--line) 75%, transparent 25%);
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding: 14px 16px;}
+    .top{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      min-width: 260px;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:12px;
+      background: radial-gradient(circle at 30% 30%, var(--good), color-mix(in srgb, var(--good) 18%, #000 82%));
+      box-shadow: var(--shadow);
+      flex:0 0 auto;
+    }
+    h1{font-size:18px; margin:0;}
+    .sub{font-size:12px; color:var(--muted); margin-top:2px;}
+
+    .nav{
+      display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--card) 84%, transparent 16%);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      line-height:1;
+      cursor:pointer;
+      min-height: 40px;
+    }
+
+    main{padding: 18px 0 40px;}
+    .hero{
+      margin: 14px 0 18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, transparent 8%), color-mix(in srgb, var(--card2) 92%, transparent 8%));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .hero h2{margin:0 0 8px; font-size:18px;}
+    .hero p{margin:0; color:var(--muted); line-height:1.35;}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--card) 92%, transparent 8%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding: 14px 14px;
+      border-bottom:1px solid var(--line);
+    }
+    .badge{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color: var(--muted);
+      background: color-mix(in srgb, var(--card2) 88%, transparent 12%);
+      white-space:nowrap;
+    }
+    .small{font-size:13px; color:var(--muted); margin-top:3px;}
+
+    details{border-top:1px solid var(--line);}
+    details:first-of-type{border-top:none;}
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding: 14px;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      min-height: var(--tap);
+    }
+    summary::-webkit-details-marker{display:none;}
+    .chev{
+      width:10px;height:10px;
+      border-right:2px solid var(--muted);
+      border-bottom:2px solid var(--muted);
+      transform: rotate(-45deg);
+      transition: transform .2s ease;
+      margin-right:4px;
+      flex:0 0 auto;
+    }
+    details[open] .chev{transform: rotate(45deg);}
+    .content{padding: 0 14px 14px; color: var(--muted); line-height:1.4;}
+    .content ul{margin:10px 0 0 18px;}
+    .content li{margin: 6px 0;}
+
+    .callout{
+      margin: 10px 0 0;
+      border:1px solid color-mix(in srgb, var(--accent) 40%, var(--line) 60%);
+      background: color-mix(in srgb, var(--accent) 10%, var(--card) 90%);
+      border-radius: var(--radius2);
+      padding: 10px 12px;
+      color: color-mix(in srgb, var(--text) 86%, var(--muted) 14%);
+    }
+    .warn{
+      border-color: color-mix(in srgb, var(--warn) 55%, var(--line) 45%);
+      background: color-mix(in srgb, var(--warn) 10%, var(--card) 90%);
+    }
+    .good{
+      border-color: color-mix(in srgb, var(--good) 55%, var(--line) 45%);
+      background: color-mix(in srgb, var(--good) 10%, var(--card) 90%);
+    }
+
+    /* Checklist */
+    .checklist{margin-top:10px; display:grid; gap:10px;}
+    .check{
+      display:flex; align-items:flex-start; gap:10px;
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--card2) 92%, transparent 8%);
+      border-radius: 14px;
+      padding: 12px;
+      min-height: var(--tap);
+    }
+    .check input{
+      width:22px; height:22px; margin-top:2px;
+      accent-color: var(--accent);
+      flex:0 0 auto;
+    }
+    .check label{cursor:pointer; color:var(--text); line-height:1.25;}
+    .row{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top:12px;
+    }
+    button{
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--card2) 90%, transparent 10%);
+      color:var(--text);
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-height: 42px;
+      cursor:pointer;
+      font-size:14px;
+    }
+    button.primary{
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--line) 45%);
+      background: color-mix(in srgb, var(--accent) 15%, var(--card2) 85%);
+    }
+    .note{
+      width:100%;
+      border:1px solid var(--line);
+      background: color-mix(in srgb, var(--card2) 92%, transparent 8%);
+      color:var(--text);
+      border-radius: var(--radius);
+      padding: 12px;
+      min-height: 160px;
+      font-size: 15px;
+      line-height:1.35;
+      resize: vertical;
+    }
+    .footer{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height:1.35;
+    }
+    @media (min-width: 880px){
+      .span6{grid-column: span 6;}
+    }
+    .pill{
+      display:inline-block;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+      margin:6px 6px 0 0;
+      color: var(--text);
+      background: color-mix(in srgb, var(--card2) 90%, transparent 10%);
+    }
+  </style>
+</head>
+
+<body>
+<header class="site">
+  <div class="wrap top">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>PO Reconditioning Plan</h1>
+        <div class="sub">Gradual steps to regain oral intake safely (saves checkboxes + notes)</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Quick navigation">
+      <button class="chip" data-jump="#principles">Principles</button>
+      <button class="chip" data-jump="#stages">Stages</button>
+      <button class="chip" data-jump="#daily">Daily plan</button>
+      <button class="chip" data-jump="#troubleshoot">Troubleshoot</button>
+      <button class="chip" data-jump="#notes">My notes</button>
+      <a class="chip" href="index.html" style="display:inline-block; text-align:center; line-height:20px;">Back to PEG-J Guide</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="why">
+    <h2 id="why">What this is (and what it isn’t)</h2>
+    <p>
+      This plan treats oral intake like physical therapy: your body is re-learning volume tolerance and safety signals after a long break.
+      It focuses on physiology (slow motility, poor accommodation, reflux) and skills (pacing, comfort, consistency). It does not require a psychiatric label.
+    </p>
+  </section>
+
+  <section class="grid">
+
+    <!-- PRINCIPLES -->
+    <article class="card span6" id="principles">
+      <div class="hd">
+        <div>
+          <div style="font-weight:900; font-size:16px;">Core principles</div>
+          <div class="small">These rules prevent flares and build confidence.</div>
+        </div>
+        <span class="badge">Read first</span>
+      </div>
+
+      <details open>
+        <summary><span>Rule 1: Small, frequent, boring</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <ul>
+            <li>Start with tiny, repeatable amounts.</li>
+            <li>Consistency matters more than bravery.</li>
+            <li>Stay in the “easy zone” so your body relearns safety.</li>
+          </ul>
+          <div class="callout good"><b>Win condition:</b> a small dose that you can repeat daily without backlash.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Rule 2: One variable at a time</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Change only one thing every 3–4 days:
+          <ul>
+            <li>Volume OR</li>
+            <li>Texture OR</li>
+            <li>Frequency OR</li>
+            <li>Timing relative to feeds/venting</li>
+          </ul>
+          <div class="callout warn"><b>Avoid:</b> changing multiple things at once (you won’t know what caused symptoms).</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Rule 3: “Exposure” without forcing</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          You do not have to “push through” nausea. Instead:
+          <ul>
+            <li>Stop early, record it, try again later.</li>
+            <li>Use venting and pacing.</li>
+            <li>Repeat the same safe step until it feels routine.</li>
+          </ul>
+          <div class="callout"><b>Goal:</b> reduce threat signals, not prove toughness.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Safety positioning</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <ul>
+            <li>Upright during intake.</li>
+            <li>Remain upright at least 30–60 minutes after.</li>
+            <li>Consider venting before/after if pressure builds.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- STAGES -->
+    <article class="card span6" id="stages">
+      <div class="hd">
+        <div>
+          <div style="font-weight:900; font-size:16px;">Stages (step ladder)</div>
+          <div class="small">Move up only when your current step is boring and reliable.</div>
+        </div>
+        <span class="badge">Progress slowly</span>
+      </div>
+
+      <details open>
+        <summary><span>Stage 0: Mouth comfort + sips</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Targets (pick 1–2):
+          <div class="pill">Ice chips</div>
+          <div class="pill">5–10 mL water</div>
+          <div class="pill">Warm tea (tiny sips)</div>
+          <div class="pill">Salt water rinse</div>
+          <div class="callout"><b>Prescription:</b> 3–6 mini-sessions/day, 30–120 seconds each.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Stage 1: Clear liquids (measured)</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Examples:
+          <ul>
+            <li>Water, oral rehydration solution, broth</li>
+            <li>Weak tea</li>
+          </ul>
+          Progression example:
+          <ul>
+            <li>Day 1–3: 10 mL per session</li>
+            <li>Day 4–6: 15–30 mL per session</li>
+          </ul>
+          <div class="callout warn"><b>Stop point:</b> rising reflux/pressure. Vent, pause, resume later.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Stage 2: “Smooth and low volume”</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Examples (tiny portions):
+          <ul>
+            <li>Applesauce</li>
+            <li>Yogurt (if tolerated)</li>
+            <li>Pudding</li>
+            <li>Thin cream of wheat</li>
+          </ul>
+          <div class="callout"><b>Start:</b> 1–2 teaspoons per session, 2–4 sessions/day.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Stage 3: Soft solids (small bites)</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Examples:
+          <ul>
+            <li>Scrambled egg</li>
+            <li>Mashed potatoes</li>
+            <li>Soft rice</li>
+            <li>Very tender shredded chicken (small)</li>
+          </ul>
+          <div class="callout"><b>Rule:</b> 5–10 bites max per session at first.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>Stage 4: Regular meals (building)</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Build meal structure slowly:
+          <ul>
+            <li>One “real” snack daily, then two.</li>
+            <li>Then one small meal daily, then two.</li>
+            <li>Keep texture predictable while increasing volume.</li>
+          </ul>
+          <div class="callout"><b>Clinician-guided:</b> this is where tube feeds often get adjusted.</div>
+        </div>
+      </details>
+    </article>
+
+    <!-- DAILY PLAN -->
+    <article class="card" id="daily">
+      <div class="hd">
+        <div>
+          <div style="font-weight:900; font-size:16px;">Daily plan (tap boxes)</div>
+          <div class="small">These save on this device. Use “New day” to reset.</div>
+        </div>
+        <span class="badge">Checklist</span>
+      </div>
+
+      <div class="content">
+        <div class="callout">
+          <b>Choose your current stage:</b>
+          <span class="pill">Stage 0</span>
+          <span class="pill">Stage 1</span>
+          <span class="pill">Stage 2</span>
+          <span class="pill">Stage 3</span>
+          <span class="pill">Stage 4</span>
+          <div class="small" style="margin-top:6px;">Stay on the same stage until it feels easy for 3–4 days.</div>
+        </div>
+
+        <div class="checklist" aria-label="Daily checklist">
+          <div class="check">
+            <input type="checkbox" id="d1" data-save="cb.po.d1">
+            <div><label for="d1">Did my first mini-session (very small amount)</label></div>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="d2" data-save="cb.po.d2">
+            <div><label for="d2">Did a second mini-session</label></div>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="d3" data-save="cb.po.d3">
+            <div><label for="d3">Stayed upright during/after (30–60 minutes)</label></div>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="d4" data-save="cb.po.d4">
+            <div><label for="d4">Used venting if pressure/reflux started</label></div>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="d5" data-save="cb.po.d5">
+            <div><label for="d5">Recorded symptoms + what I tried in Notes</label></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="primary" id="newDayBtn">New day (clear daily boxes)</button>
+          <button id="resetAllBtn">Reset all boxes</button>
+        </div>
+
+        <div class="footer">
+          “New day” clears only the daily boxes (d1–d5). “Reset all” clears everything (including stage habit boxes below).
+        </div>
+      </div>
+    </article>
+
+    <!-- TROUBLESHOOT -->
+    <article class="card span6" id="troubleshoot">
+      <div class="hd">
+        <div>
+          <div style="font-weight:900; font-size:16px;">Troubleshooting</div>
+          <div class="small">If symptoms rise, shrink the dose and keep the habit.</div>
+        </div>
+        <span class="badge">When stuck</span>
+      </div>
+
+      <details open>
+        <summary><span>If nausea or reflux rises</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <ul>
+            <li>Stop early (do not force it).</li>
+            <li>Vent if you have a G-port and pressure is building.</li>
+            <li>Next session: cut the volume in half.</li>
+            <li>Keep the number of sessions the same (habit stays).</li>
+          </ul>
+          <div class="callout warn"><b>Rule:</b> decrease volume before decreasing frequency.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>If you feel “repelled” by food</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          This can happen after long underuse. Strategies:
+          <ul>
+            <li>Use neutral foods (boring, familiar, not strongly flavored).</li>
+            <li>Short exposure counts: smell, tiny sip, tiny bite, stop.</li>
+            <li>Keep it predictable: same time, same setup, same portion.</li>
+          </ul>
+          <div class="callout"><b>Translation:</b> your body can learn safety again through repetition.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>When to contact your clinician</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          Contact urgently if you have:
+          <ul>
+            <li>Persistent vomiting</li>
+            <li>Severe abdominal pain or rapidly increasing distension</li>
+            <li>Very low urine, dizziness, fainting</li>
+            <li>Tube problems (if present): falling out, bleeding, heavy leakage</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- NOTES -->
+    <article class="card span6" id="notes">
+      <div class="hd">
+        <div>
+          <div style="font-weight:900; font-size:16px;">My notes</div>
+          <div class="small">Auto-saves on this device (browser storage).</div>
+        </div>
+        <span class="badge">Auto-save</span>
+      </div>
+
+      <div class="content">
+        <div class="callout">
+          Suggested note template:
+          <ul>
+            <li>Time + stage</li>
+            <li>What (and how much)</li>
+            <li>Symptoms (0–10 nausea/reflux/pressure)</li>
+            <li>What helped (venting, pause, smaller dose)</li>
+          </ul>
+        </div>
+
+        <textarea class="note" id="patientNotes" placeholder="Example: 0730 Stage 1, 15 mL broth. Nausea 2/10, reflux 1/10. Stayed upright. Felt okay."></textarea>
+
+        <div class="row">
+          <button class="primary" id="exportBtn">Export notes</button>
+          <button id="copyBtn">Copy notes</button>
+          <button id="clearNotesBtn">Clear notes</button>
+        </div>
+
+        <div class="footer">
+          Notes are stored on this device/browser only. Use Export if you want a backup.
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="footer">
+    This plan supports your clinician’s care plan. If you feel unsafe or rapidly worse, seek urgent care.
+  </div>
+</main>
+
+<script>
+  // Smooth jump buttons
+  document.querySelectorAll('[data-jump]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const sel = btn.getAttribute('data-jump');
+      const el = document.querySelector(sel);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // Local storage helpers
+  const store = {
+    get(key, fallback=null){
+      try { const v = localStorage.getItem(key); return v===null ? fallback : JSON.parse(v); }
+      catch { return fallback; }
+    },
+    set(key, value){
+      try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+    }
+  };
+
+  // Persist checkboxes
+  document.querySelectorAll('input[type="checkbox"][data-save]').forEach(cb=>{
+    const key = cb.dataset.save;
+    const saved = store.get(key, null);
+    if(saved !== null) cb.checked = !!saved;
+    cb.addEventListener('change', ()=> store.set(key, cb.checked));
+  });
+
+  // Notes auto-save
+  const notesEl = document.getElementById('patientNotes');
+  const NOTES_KEY = 'notes.po';
+  notesEl.value = store.get(NOTES_KEY, '');
+  let t=null;
+  notesEl.addEventListener('input', ()=>{
+    clearTimeout(t);
+    t = setTimeout(()=> store.set(NOTES_KEY, notesEl.value), 150);
+  });
+
+  // Export notes
+  document.getElementById('exportBtn').addEventListener('click', ()=>{
+    const blob = new Blob([notesEl.value], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const stamp = new Date().toISOString().slice(0,10);
+    a.href = url;
+    a.download = `po-reconditioning-notes-${stamp}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  // Copy notes
+  document.getElementById('copyBtn').addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText(notesEl.value);
+      toast('Copied notes');
+    }catch{
+      toast('Copy not available');
+    }
+  });
+
+  // Clear notes
+  document.getElementById('clearNotesBtn').addEventListener('click', ()=>{
+    if(confirm('Clear notes on this device?')){
+      notesEl.value = '';
+      store.set(NOTES_KEY, '');
+      toast('Notes cleared');
+    }
+  });
+
+  // New day clears only daily boxes
+  document.getElementById('newDayBtn').addEventListener('click', ()=>{
+    if(confirm('New day? This clears only the daily plan boxes (d1–d5).')){
+      ['cb.po.d1','cb.po.d2','cb.po.d3','cb.po.d4','cb.po.d5'].forEach(k=>{
+        const cb = document.querySelector(`input[data-save="${k}"]`);
+        if(cb){ cb.checked = false; store.set(k, false); }
+      });
+      toast('New day started');
+    }
+  });
+
+  // Reset all boxes on this page
+  document.getElementById('resetAllBtn').addEventListener('click', ()=>{
+    if(confirm('Reset all checkboxes on this page?')){
+      document.querySelectorAll('input[type="checkbox"][data-save]').forEach(cb=>{
+        cb.checked = false;
+        store.set(cb.dataset.save, false);
+      });
+      toast('All boxes reset');
+    }
+  });
+
+  // Small toast message
+  function toast(msg){
+    const el = document.createElement('div');
+    el.textContent = msg;
+    el.style.position='fixed';
+    el.style.left='50%';
+    el.style.bottom='18px';
+    el.style.transform='translateX(-50%)';
+    el.style.background='rgba(0,0,0,.78)';
+    el.style.color='white';
+    el.style.padding='10px 12px';
+    el.style.borderRadius='12px';
+    el.style.fontSize='14px';
+    el.style.zIndex='9999';
+    el.style.maxWidth='calc(100vw - 28px)';
+    el.style.textAlign='center';
+    document.body.appendChild(el);
+    setTimeout(()=>{ el.style.transition='opacity .25s'; el.style.opacity='0'; }, 1200);
+    setTimeout(()=> el.remove(), 1550);
+  }
+</script>
+</body>
+</html>
