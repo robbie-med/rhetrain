@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PO Retraining: Oral Intake Reconditioning Plan</title>
+  <meta name="description" content="A comprehensive, stepwise plan for regaining oral intake (PO) after prolonged underuse, framed in a physiologic, non-psychiatric nervous-system and GI retraining model." />
+
+  <!-- Page icon (user requested) -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2217/2217851.png" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: #0f1a33;
+      --card2:#0c1630;
+      --text: #e6e9f2;
+      --muted:#b9c0d4;
+      --faint:#7f8aa8;
+      --border: rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --good:#34d399;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius2: 12px;
+      --max: 1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 10% 5%, rgba(125,211,252,.12), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,.12), transparent 60%),
+        radial-gradient(900px 650px at 50% 100%, rgba(52,211,153,.08), transparent 70%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.75);
+      border-bottom:1px solid var(--border);
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px;}
+    .topbar{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      min-width:260px;
+    }
+    .logo{
+      width:40px;height:40px;border-radius:12px;
+      background: linear-gradient(135deg, rgba(125,211,252,.25), rgba(167,139,250,.25));
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .logo img{width:28px;height:28px;opacity:.95}
+    .titleblock{display:flex; flex-direction:column}
+    .titleblock .t1{font-weight:800; letter-spacing:.2px}
+    .titleblock .t2{font-size:.92rem; color:var(--muted)}
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .chip{
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:.92rem;
+      cursor:pointer;
+      user-select:none;
+    }
+    .chip:hover{background: rgba(255,255,255,.07)}
+    .chip.primary{
+      border-color: rgba(125,211,252,.35);
+      background: rgba(125,211,252,.10);
+    }
+    .chip.danger{
+      border-color: rgba(251,113,133,.35);
+      background: rgba(251,113,133,.10);
+    }
+
+    main .wrap{padding-top:22px; padding-bottom:44px;}
+    h1,h2,h3{line-height:1.15; margin:0 0 10px}
+    h1{font-size:1.9rem}
+    h2{font-size:1.4rem; margin-top:26px}
+    h3{font-size:1.08rem; margin-top:16px}
+    p{margin:10px 0; color:var(--text)}
+    .muted{color:var(--muted)}
+    .faint{color:var(--faint)}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      nav{justify-content:flex-start}
+      .brand{min-width:unset}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .card.flat{box-shadow:none; background: rgba(255,255,255,.03)}
+    .card .row{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .pill{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.15);
+      font-size:.85rem;
+      color:var(--muted);
+    }
+    .pill.good{border-color: rgba(52,211,153,.35); background: rgba(52,211,153,.10); color:#d6ffe9}
+    .pill.warn{border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.10); color:#fff5d1}
+    .pill.bad{border-color: rgba(251,113,133,.35); background: rgba(251,113,133,.10); color:#ffe0e6}
+    .divider{height:1px; background: var(--border); margin:14px 0}
+    .kicker{
+      font-family:var(--mono);
+      font-size:.88rem;
+      color:rgba(125,211,252,.95);
+      letter-spacing:.2px;
+    }
+    ul{margin:10px 0 10px 18px; color:var(--text)}
+    li{margin:6px 0}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 720px){
+      .two{grid-template-columns: 1fr}
+    }
+
+    details{
+      border:1px solid var(--border);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.03);
+      padding:10px 12px;
+      margin:10px 0;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight:700;
+    }
+    details summary::-webkit-details-marker{display:none}
+    .note{
+      border-left:4px solid rgba(125,211,252,.65);
+      background: rgba(125,211,252,.08);
+      padding:10px 12px;
+      border-radius: 10px;
+      margin:10px 0;
+      color: var(--text);
+    }
+    .warnbox{
+      border-left:4px solid rgba(251,191,36,.75);
+      background: rgba(251,191,36,.10);
+      padding:10px 12px;
+      border-radius:10px;
+      margin:10px 0;
+    }
+    .dangerbox{
+      border-left:4px solid rgba(251,113,133,.75);
+      background: rgba(251,113,133,.10);
+      padding:10px 12px;
+      border-radius:10px;
+      margin:10px 0;
+    }
+
+    .progressWrap{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+    .bar{
+      flex: 1 1 240px;
+      height:12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    .bar > div{
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, rgba(125,211,252,.95), rgba(167,139,250,.95));
+      border-radius:999px;
+      transition: width .25s ease;
+    }
+    .small{font-size:.9rem}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    button{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    button:hover{background: rgba(255,255,255,.08)}
+    button.primary{
+      border-color: rgba(125,211,252,.35);
+      background: rgba(125,211,252,.12);
+    }
+    button.danger{
+      border-color: rgba(251,113,133,.35);
+      background: rgba(251,113,133,.12);
+    }
+    .table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .table th, .table td{
+      padding:10px 10px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+    }
+    .table th{
+      text-align:left;
+      font-size:.92rem;
+      color:var(--muted);
+      background: rgba(0,0,0,.20);
+    }
+    .table tr:last-child td{border-bottom:none}
+    .tag{
+      display:inline-block;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      font-size:.82rem;
+      color:var(--muted);
+      margin-right:6px;
+      margin-top:4px;
+    }
+    .tag.good{border-color: rgba(52,211,153,.35); background: rgba(52,211,153,.10); color:#d6ffe9}
+    .tag.warn{border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.10); color:#fff5d1}
+
+    .stickyTools{
+      position:fixed;
+      right:14px;
+      bottom:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:60;
+    }
+    .fab{
+      width:46px;height:46px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(15,26,51,.85);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      color:var(--text);
+      font-weight:900;
+    }
+    .fab:hover{background: rgba(15,26,51,.95)}
+    .sr-only{
+      position:absolute;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);
+      border:0;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background: rgba(0,0,0,.20);
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .foot a{color:var(--accent)}
+    .printOnly{display:none}
+    @media print{
+      header, .stickyTools, .noPrint{display:none !important}
+      body{background:white;color:black}
+      .card{box-shadow:none}
+      .printOnly{display:block}
+      a{color:black;text-decoration:underline}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img alt="" src="https://cdn-icons-png.flaticon.com/512/2217/2217851.png">
+        </div>
+        <div class="titleblock">
+          <div class="t1">PO Retraining: One-Stop Reconditioning Plan</div>
+          <div class="t2">Stepwise GI + oropharyngeal + nervous-system reconditioning (non-psychiatric framing)</div>
+        </div>
+      </div>
+
+      <nav class="noPrint" aria-label="page navigation">
+        <span class="chip primary" data-jump="#start">Start</span>
+        <span class="chip" data-jump="#model">Framework</span>
+        <span class="chip" data-jump="#steps">Stepwise Plan</span>
+        <span class="chip" data-jump="#mouth">Mouth/Texture Training</span>
+        <span class="chip" data-jump="#symptoms">Common Sensations</span>
+        <span class="chip" data-jump="#tracker">Tracker</span>
+        <span class="chip danger" data-jump="#safety">Safety</span>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" id="start">
+
+    <div class="grid">
+      <section class="card">
+        <div class="kicker">Purpose</div>
+        <h1>Regain oral intake after underuse without “it’s all in your head” messaging</h1>
+        <p class="muted">
+          This plan is designed for people who believe their difficulty eating is physiologic (dysmotility, neurologic coordination,
+          reflux, post-illness deconditioning, prolonged tube feeding, etc.). It keeps the framing physiologic while still addressing the
+          very real “threat system” and sensory amplification that can block eating.
+        </p>
+
+        <div class="note">
+          <strong>Core idea:</strong> underuse leads to deconditioning across multiple layers (mouth/sensory → swallow coordination → stomach accommodation → gut-brain signaling).
+          Progress is built by <em>graded exposure</em> to safe inputs, with repetition, pacing, and objective progression criteria.
+        </div>
+
+        <div class="progressWrap">
+          <div class="pill">Saved level: <strong id="savedLevelText">None</strong></div>
+          <div class="bar" aria-label="progress bar"><div id="progressBar"></div></div>
+          <div class="pill">Target: <strong id="targetLevelText">Level 6</strong></div>
+        </div>
+
+        <div class="btnrow noPrint">
+          <button class="primary" id="printBtn" title="Print this page">Print</button>
+          <button id="collapseBtn" title="Collapse all details">Collapse all</button>
+          <button id="expandBtn" title="Expand all details">Expand all</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="two">
+          <div>
+            <h3>How to use this page</h3>
+            <ul>
+              <li>Pick your current <strong>Level</strong> (0–6) and follow that level’s daily structure.</li>
+              <li>Use the <strong>progression criteria</strong> to decide when to move up (not willpower).</li>
+              <li>Add the <strong>Mouth/Texture Training</strong> track from day 1 (even before “real meals”).</li>
+              <li>Use the <strong>Common Sensations</strong> section to normalize sensations without dismissing them.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>What success looks like</h3>
+            <ul>
+              <li>Eating becomes less “foregrounded” and less symptom-scanned.</li>
+              <li>Sensations still occur but feel less alarming and less intense.</li>
+              <li>Volume and variety increase because the system adapts.</li>
+              <li>Setbacks happen; you return to structure and keep trend-lines moving.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card flat">
+        <div class="kicker">Quick Start</div>
+        <h2 style="margin-top:6px">Daily micro-structure</h2>
+        <p class="muted small">Use this structure at every level; the <em>content</em> changes as you advance.</p>
+
+        <table class="table" aria-label="daily structure">
+          <thead>
+            <tr>
+              <th>Block</th>
+              <th>What you do</th>
+              <th>Why it works</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1) Warm-up</strong><br><span class="faint small">2–5 min</span></td>
+              <td>Downshift + mouth priming (see tools below).</td>
+              <td>Reduces threat-state, improves swallow coordination, lowers “hypervigilance gain.”</td>
+            </tr>
+            <tr>
+              <td><strong>2) Exposure</strong><br><span class="faint small">5–15 min</span></td>
+              <td>Planned intake (sip/bite schedule) + “hold then swallow” practice.</td>
+              <td>Graded exposure retrains sensory prediction and motor patterning.</td>
+            </tr>
+            <tr>
+              <td><strong>3) Neutral finish</strong><br><span class="faint small">1–2 min</span></td>
+              <td>Stop on plan, log, and do a brief “safe finish” routine.</td>
+              <td>Ends the session without panic escalation; reinforces control + success memory.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Warm-up tools (choose 1–2)</summary>
+          <ul>
+            <li><span class="tag">Breathing</span> 4–6 slow breaths, long exhale (6–8 sec), jaw loose.</li>
+            <li><span class="tag">Posture</span> Sit upright, shoulders down, feet supported.</li>
+            <li><span class="tag">Saliva priming</span> 5 deliberate swallows; small sip of warm water.</li>
+            <li><span class="tag">Mouth map</span> Touch tongue to cheeks/teeth/gums; gentle jaw open/close x 5.</li>
+            <li><span class="tag">Neutral cue</span> Say: “This is training. Sensations are expected and safe.”</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Neutral finish routine</summary>
+          <ul>
+            <li>Stop at the planned endpoint (not when panic peaks).</li>
+            <li>Two slow breaths, one sip of water if desired.</li>
+            <li>Log: amount, sensation score, and a one-line win (“I completed the plan”).</li>
+          </ul>
+        </details>
+      </aside>
+    </div>
+
+    <section class="card" id="model">
+      <div class="kicker">Framework (non-psychiatric, physiologic)</div>
+      <h2>What’s happening (a model people can buy into)</h2>
+
+      <div class="two">
+        <div class="card flat">
+          <h3>1) Deconditioning is real</h3>
+          <ul>
+            <li><strong>Mouth/oral phase:</strong> texture tolerance and swallow timing degrade with underuse.</li>
+            <li><strong>Esophagus:</strong> normal peristalsis can feel “weird” when you’re scanning for it.</li>
+            <li><strong>Stomach accommodation:</strong> capacity and comfort with volume can shrink with low intake.</li>
+            <li><strong>Gut signaling:</strong> nausea, fullness, reflux, and globus can amplify after long avoidance.</li>
+          </ul>
+          <div class="note">
+            The nervous system learns “food = threat” via repeated bad experiences (pain, choking fear, reflux),
+            then increases monitoring and sensitivity. That’s not a moral failure and not “imaginary.”
+          </div>
+        </div>
+
+        <div class="card flat">
+          <h3>2) A “threat-state” blocks eating</h3>
+          <ul>
+            <li>Threat-state increases muscle tension (throat, jaw), slows coordination, and raises symptom salience.</li>
+            <li>It can trigger protective reflexes: gagging, early fullness, nausea, and air swallowing.</li>
+            <li>It drives avoidance, which reinforces the threat prediction.</li>
+          </ul>
+          <div class="note">
+            We do not need to label this as “psych.” We treat it like any other physiologic conditioning loop:
+            <strong>inputs → predictions → body response → learning.</strong>
+          </div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Language that preserves buy-in</summary>
+        <ul>
+          <li>“We’re rebuilding tolerance and coordination after underuse.”</li>
+          <li>“Your system has learned to overreact to normal sensations. We can retrain that.”</li>
+          <li>“We’re changing the prediction your body makes when food arrives.”</li>
+          <li>“This is the same principle as physical therapy: graded, repeatable exposure with criteria.”</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Ethics + transparency (without triggering rejection)</summary>
+        <ul>
+          <li>This site emphasizes physiology, conditioning, and nervous-system retraining; it does <strong>not</strong> claim symptoms are fake.</li>
+          <li>It includes attention, expectation, and fear-conditioning tools because those mechanisms are <strong>part of human physiology</strong>.</li>
+          <li>Red flags and medical evaluation guidance are included to avoid unsafe reassurance.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card" id="steps">
+      <div class="kicker">Stepwise PO progression (explicit)</div>
+      <h2>Levels 0–6: What you are doing at each stage</h2>
+      <p class="muted">
+        Each level is defined by <strong>type of input</strong>, <strong>volume goal</strong>, and <strong>repetition</strong>.
+        You progress when your body shows adaptation, not when you “feel ready.”
+      </p>
+
+      <div class="warnbox">
+        <strong>Rule:</strong> Pick a level you can complete consistently. If you repeatedly fail the level, drop one level and rebuild momentum.
+      </div>
+
+      <table class="table" aria-label="levels overview">
+        <thead>
+          <tr>
+            <th style="width:110px">Level</th>
+            <th>Focus</th>
+            <th>Inputs</th>
+            <th>Progression criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Level 0</strong><div class="faint small">Stabilize</div></td>
+            <td>Reduce threat-state; practice mouth exposure without “meals.”</td>
+            <td>Water/ice chips, warm tea, tiny sips, “hold in mouth” drills.</td>
+            <td>Complete 3–6 exposure sessions/day for 2 days with manageable symptoms.</td>
+          </tr>
+          <tr>
+            <td><strong>Level 1</strong><div class="faint small">Thin liquids</div></td>
+            <td>Consistent swallow timing + low-volume tolerance.</td>
+            <td>Broth, oral rehydration, thin shakes, juice diluted.</td>
+            <td>Hit planned volume for 2–3 days without escalating panic/avoidance.</td>
+          </tr>
+          <tr>
+            <td><strong>Level 2</strong><div class="faint small">Thick liquids</div></td>
+            <td>Texture tolerance; slower flow; reduce aspiration fear.</td>
+            <td>Smoothies, yogurt drinks, pudding-thick supplements.</td>
+            <td>Finish 3 planned intakes/day; symptoms trend down or stable.</td>
+          </tr>
+          <tr>
+            <td><strong>Level 3</strong><div class="faint small">Purees</div></td>
+            <td>Chew-free “food” with defined bites.</td>
+            <td>Applesauce, mashed potatoes, soups with puree texture.</td>
+            <td>Two “mini-meals”/day + snacks; mouth drills continue.</td>
+          </tr>
+          <tr>
+            <td><strong>Level 4</strong><div class="faint small">Soft solids</div></td>
+            <td>Chewing + swallow sequencing; stomach volume rebuilding.</td>
+            <td>Eggs, oatmeal, soft pasta, flaky fish, tender meats in small bites.</td>
+            <td>One full meal/day (small) + 2 mini-meals; minimal avoidance behavior.</td>
+          </tr>
+          <tr>
+            <td><strong>Level 5</strong><div class="faint small">Mixed textures</div></td>
+            <td>Real-world eating; mixed consistencies.</td>
+            <td>Sandwiches, rice bowls, salads (as tolerated), normal portions.</td>
+            <td>2+ meals/day; variety expanding; setbacks recover within 24–48h.</td>
+          </tr>
+          <tr>
+            <td><strong>Level 6</strong><div class="faint small">Maintenance</div></td>
+            <td>Normalize; reduce tracking; “life eating.”</td>
+            <td>Normal diet with flexible choices.</td>
+            <td>Stable intake 2–4 weeks; tracking optional; confidence restored.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <details>
+        <summary>Picking your level (fast method)</summary>
+        <ul>
+          <li>Choose the highest level you can complete for <strong>48 hours</strong> without repeated “bail-outs.”</li>
+          <li>If symptoms spike and you stop sessions early: drop one level for 24–48h, then retry.</li>
+          <li>If you complete sessions but feel uncomfortable: stay put; adaptation often shows on day 2–4.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Daily dosing: how many sessions?</summary>
+        <ul>
+          <li><strong>Minimum:</strong> 3 sessions/day (morning, mid-day, evening).</li>
+          <li><strong>Better:</strong> 4–6 short sessions/day (reduces fear load per session).</li>
+          <li><strong>Each session:</strong> warm-up 2–5 min → exposure 5–15 min → neutral finish.</li>
+        </ul>
+      </details>
+
+      <div class="btnrow noPrint">
+        <button class="primary" id="setLevelBtn">Set my current level</button>
+        <button id="jumpToPlanBtn">Jump to my level plan</button>
+      </div>
+
+      <div id="levelPlans" style="margin-top:14px">
+        <h3>Your level-specific plan</h3>
+        <p class="muted small">Select a level above to highlight the matching plan below.</p>
+
+        <div class="two">
+          <div class="card flat" data-level-plan="0">
+            <div class="pill">Level 0 plan</div>
+            <h3>Stabilize + mouth exposure</h3>
+            <ul>
+              <li>3–6 sessions/day: <strong>ice chip or water</strong> + “hold in mouth” (10–20 seconds) before swallow.</li>
+              <li>Goal: complete the session even if sensations appear; stop at the planned endpoint.</li>
+              <li>Add <strong>texture desensitization</strong> (see Mouth/Texture section) from day 1.</li>
+            </ul>
+            <div class="note">
+              You are training two things: (1) “food input is safe,” (2) coordination can be calm and automatic again.
+            </div>
+          </div>
+
+          <div class="card flat" data-level-plan="1">
+            <div class="pill">Level 1 plan</div>
+            <h3>Thin liquids (structured sips)</h3>
+            <ul>
+              <li>3–5 sessions/day: 1–3 oz per session (start low), sips every 30–60 seconds.</li>
+              <li>Optional: warm liquids can reduce spasm-like sensations for some people.</li>
+              <li>Keep mouth drills: hold 5–10 seconds before swallowing on 3–5 sips per session.</li>
+            </ul>
+          </div>
+
+          <div class="card flat" data-level-plan="2">
+            <div class="pill">Level 2 plan</div>
+            <h3>Thick liquids (slow flow)</h3>
+            <ul>
+              <li>3–4 sessions/day: 2–4 oz per session of smoothie/yogurt/pudding-thick supplement.</li>
+              <li>Use smaller spoonfuls; “pause, hold, swallow” sequencing.</li>
+              <li>Add gentle chewing motions (even without solids) to re-engage patterns.</li>
+            </ul>
+          </div>
+
+          <div class="card flat" data-level-plan="3">
+            <div class="pill">Level 3 plan</div>
+            <h3>Purees (defined bites)</h3>
+            <ul>
+              <li>2 mini-meals/day + 1–2 snack sessions; start with 6–10 bites per mini-meal.</li>
+              <li>Each bite: place → hold 3–5 sec → swallow → breath.</li>
+              <li>Stay upright 30–60 min if reflux-prone; avoid “checking” after each bite.</li>
+            </ul>
+          </div>
+
+          <div class="card flat" data-level-plan="4">
+            <div class="pill">Level 4 plan</div>
+            <h3>Soft solids (chew + swallow)</h3>
+            <ul>
+              <li>1 small meal/day + 2 mini-meals; bite size = “pea-to-dime.”</li>
+              <li>Chew count is optional; priority is <strong>slow, calm sequencing</strong>.</li>
+              <li>Increase volume by tiny increments every 1–2 days.</li>
+            </ul>
+          </div>
+
+          <div class="card flat" data-level-plan="5">
+            <div class="pill">Level 5 plan</div>
+            <h3>Mixed textures (real-world)</h3>
+            <ul>
+              <li>2 meals/day + snack; introduce 1 “challenge food” 3x/week in small doses.</li>
+              <li>Use neutral finish; avoid immediate post-meal symptom rumination loops.</li>
+              <li>Keep a “fallback” safe food to prevent spirals.</li>
+            </ul>
+          </div>
+
+          <div class="card flat" data-level-plan="6">
+            <div class="pill">Level 6 plan</div>
+            <h3>Maintenance (reduce tracking)</h3>
+            <ul>
+              <li>Eat with flexibility; keep 1–2 structured habits if helpful.</li>
+              <li>Stop measuring symptoms so often; measure function instead.</li>
+              <li>If setback: drop 1 level for 24–48h, then return.</li>
+            </ul>
+            <div class="note">
+              The goal is “automatic eating again,” not perfect absence of sensation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="mouth">
+      <div class="kicker">Mouth / texture / sensory training (new section)</div>
+      <h2>Rebuild oral tolerance and make swallowing automatic again</h2>
+      <p class="muted">
+        Even when the main complaint feels “in the chest” or “in the stomach,” the mouth/throat can become a sensory trigger.
+        These drills build familiarity with textures and reduce the “alarm” response to normal sensations.
+      </p>
+
+      <div class="two">
+        <div class="card flat">
+          <h3>Track A: “Hold, explore, then swallow”</h3>
+          <ul>
+            <li>Start with <strong>water</strong>, then move to thicker liquids and purees as tolerated.</li>
+            <li>Place a small amount in mouth, <strong>hold 10–20 sec</strong>, notice texture/temperature, then swallow.</li>
+            <li>Goal is not comfort; goal is <strong>familiarity</strong> and a calm finish.</li>
+          </ul>
+          <div class="note">
+            This is controlled exposure: your system learns the sensation is safe and stops overreacting.
+          </div>
+        </div>
+
+        <div class="card flat">
+          <h3>Track B: Texture ladder (graded)</h3>
+          <p class="muted small">Pick 1–2 items and repeat daily for a few days before moving on.</p>
+          <ul>
+            <li><span class="tag good">Easy</span> warm water, ice chip, thin broth</li>
+            <li><span class="tag good">Easy</span> smoothie / yogurt drink</li>
+            <li><span class="tag warn">Medium</span> applesauce, pudding, mashed potato</li>
+            <li><span class="tag warn">Medium</span> oatmeal, soft scrambled egg</li>
+            <li><span class="tag">Advanced</span> soft pasta, flaky fish, tender chicken in tiny bites</li>
+            <li><span class="tag">Advanced</span> mixed textures (soup with pieces, sandwich)</li>
+          </ul>
+        </div>
+      </div>
+
+      <details>
+        <summary>Drill set (5–8 minutes total)</summary>
+        <ul>
+          <li><strong>Jaw release:</strong> gentle open/close x 8; tongue rests on roof of mouth.</li>
+          <li><strong>Saliva swallows:</strong> 5 slow swallows; exhale after each.</li>
+          <li><strong>“Hold then swallow”:</strong> 5 reps with tiny sips/spoonfuls.</li>
+          <li><strong>One “weird” rep:</strong> deliberately notice the sensation, label it “normal,” then swallow anyway.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Make it physiologic (not “therapy”)</summary>
+        <ul>
+          <li>Call it “oropharyngeal reconditioning” or “sensory recalibration.”</li>
+          <li>Explain: repeated exposure reduces sensory gain via habituation and prediction updating.</li>
+          <li>Explain: threat-state increases muscle tension and symptom intensity; downshifting is a motor optimization tool.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card" id="symptoms">
+      <div class="kicker">Common sensations (normalize without dismissing)</div>
+      <h2>What you might feel, what it often means, and what to do</h2>
+
+      <details open>
+        <summary>Globus (lump/throat fullness)</summary>
+        <div class="two">
+          <div>
+            <ul>
+              <li>Often linked to reflux, throat muscle tension, dryness, post-nasal drip, or heightened sensation.</li>
+              <li>Can be triggered by scanning, repeated swallowing attempts, and “checking” sensations.</li>
+            </ul>
+          </div>
+          <div>
+            <strong>What to do</strong>
+            <ul>
+              <li>Do one planned swallow sequence, then stop “testing” it.</li>
+              <li>Warm water sip; gentle jaw release; long exhale.</li>
+              <li>Continue the plan at smaller dose rather than stopping entirely.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Feeling peristalsis / “spasm-like” chest sensations</summary>
+        <ul>
+          <li>Esophageal movement can become noticeable when attention is high and intake is irregular.</li>
+          <li>Cold liquids, large gulps, and rapid intake can worsen sensations in some people.</li>
+          <li><strong>Plan:</strong> smaller sips, warm liquids, slower pacing, upright posture; consider Level 1–2 structure.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Early fullness / pressure / nausea when increasing volume</summary>
+        <ul>
+          <li>Common during stomach accommodation retraining after low intake.</li>
+          <li><strong>Plan:</strong> increase volume in tiny increments; distribute across more sessions; finish neutral.</li>
+          <li>Do not “prove” capacity in one sitting; that teaches threat-state and reinforces avoidance.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Reflux or burning</summary>
+        <ul>
+          <li>Upright posture, smaller dose, and avoiding immediate lying down can help.</li>
+          <li>Use a consistent schedule instead of large episodic intakes.</li>
+          <li>If symptoms are severe, progressive, or associated with red flags, escalate evaluation (see Safety).</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Gagging / coughing / fear of choking</summary>
+        <ul>
+          <li>Fear tightens coordination; start with controlled textures and planned bites.</li>
+          <li>Use “hold then swallow” with tiny amounts; focus on exhale after swallow.</li>
+          <li>If true aspiration concerns exist, involve speech/swallow evaluation.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card" id="tracker">
+      <div class="kicker">Tracker (local only)</div>
+      <h2>Save your current level + log sessions</h2>
+      <p class="muted">
+        This tracker stores data in your browser (localStorage). Nothing is uploaded.
+      </p>
+
+      <div class="two">
+        <div class="card flat">
+          <h3>Current level</h3>
+          <div class="row">
+            <label class="pill" for="levelSelect">Choose:</label>
+            <select id="levelSelect" style="padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.18);color:var(--text)">
+              <option value="">--</option>
+              <option value="0">Level 0</option>
+              <option value="1">Level 1</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              <option value="4">Level 4</option>
+              <option value="5">Level 5</option>
+              <option value="6">Level 6</option>
+            </select>
+          </div>
+          <div class="btnrow noPrint">
+            <button class="primary" id="saveLevelBtn">Save level</button>
+            <button id="clearLevelBtn">Clear level</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3>Quick session log</h3>
+          <div class="two">
+            <div>
+              <label class="muted small" for="logAmount">Amount (e.g., 2 oz, 8 bites)</label>
+              <input id="logAmount" placeholder="2 oz" style="width:100%;margin-top:6px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.18);color:var(--text)" />
+            </div>
+            <div>
+              <label class="muted small" for="logSx">Sensation score (0–10)</label>
+              <input id="logSx" type="number" min="0" max="10" placeholder="4" style="width:100%;margin-top:6px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.18);color:var(--text)" />
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label class="muted small" for="logNote">One-line note (win / trigger / adjustment)</label>
+            <input id="logNote" placeholder="Completed plan; warm tea helped" style="width:100%;margin-top:6px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.18);color:var(--text)" />
+          </div>
+          <div class="btnrow noPrint">
+            <button class="primary" id="addLogBtn">Add log</button>
+            <button id="exportBtn">Export</button>
+            <button id="importBtn">Import</button>
+            <button class="danger" id="clearLogsBtn">Clear logs</button>
+          </div>
+          <p class="faint small">Export/Import uses a JSON file you save locally.</p>
+        </div>
+
+        <div class="card flat">
+          <h3>Recent logs</h3>
+          <div id="logList" class="muted small">No logs yet.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="safety">
+      <div class="kicker">Safety</div>
+      <h2>When to stop self-guided retraining and seek medical evaluation</h2>
+
+      <div class="dangerbox">
+        <strong>Urgent evaluation</strong> if any of the following:
+        <ul>
+          <li>Chest pain/pressure concerning for cardiac cause, severe shortness of breath, syncope.</li>
+          <li>Inability to handle secretions, repeated choking/aspiration events, cyanosis.</li>
+          <li>GI bleeding (hematemesis, melena), severe dehydration, or rapidly worsening weakness.</li>
+        </ul>
+      </div>
+
+      <div class="warnbox">
+        <strong>Prompt evaluation</strong> if:
+        <ul>
+          <li>Progressive dysphagia, odynophagia, persistent vomiting, or unintentional weight loss.</li>
+          <li>New focal neurologic deficits, new voice changes, or aspiration pneumonia concerns.</li>
+          <li>Symptoms are worsening despite consistent low-level structure for 7–14 days.</li>
+        </ul>
+      </div>
+
+      <details>
+        <summary>Clinical note</summary>
+        <p class="muted">
+          This site is educational and is not medical advice. If you have a feeding tube or complex comorbidities,
+          coordinate changes with your clinical team. Progression should be individualized to safety and nutrition needs.
+        </p>
+      </details>
+    </section>
+
+    <section class="card" id="faq">
+      <div class="kicker">FAQ</div>
+      <h2>Common sticking points</h2>
+
+      <details>
+        <summary>“I’m not eating normal food, so how can this be about stomach retraining?”</summary>
+        <ul>
+          <li>Even small, non-meal intake still produces sensations (reflux, peristalsis, fullness) that your system can learn to fear.</li>
+          <li>Stomach accommodation and gut signaling adapt to regular, graded inputs—starting wherever you are.</li>
+          <li>The plan builds predictable exposures so sensations become less alarming and less dominant.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>What if I relapse for a day?</summary>
+        <ul>
+          <li>Drop one level for 24–48h to regain control and complete sessions.</li>
+          <li>Then return to the prior level when stable—this is normal training, not failure.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>How long does this take?</summary>
+        <ul>
+          <li>Many people see measurable change within days, but stable reconditioning often takes weeks.</li>
+          <li>Trends matter more than any single day.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <div class="kicker">References / concepts</div>
+      <p class="muted">
+        Concepts used here include graded exposure, habituation, interoception and sensory gain, motor reconditioning,
+        swallow sequencing, and gastric accommodation. This page intentionally uses physiologic language to preserve buy-in
+        while still addressing mechanisms that influence symptoms.
+      </p>
+      <p class="faint small printOnly">
+        Printed from robbie-med.github.io (PO retraining plan).
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<div class="stickyTools noPrint" aria-label="quick tools">
+  <button class="fab" id="toTopBtn" title="Back to top" aria-label="Back to top">↑</button>
+  <button class="fab" id="toTrackerBtn" title="Go to tracker" aria-label="Go to tracker">✓</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>copy left robbie.med 2026</div>
+      <div>
+        Made by robbie.med |
+        <a href="https://robbiemed.org" target="_blank" rel="noopener">Contact Me</a> |
+        SDG 2025
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $ = (q, el=document)=> el.querySelector(q);
+  const $$ = (q, el=document)=> Array.from(el.querySelectorAll(q));
+
+  // Smooth jump chips
+  $$('.chip[data-jump]').forEach(ch => {
+    ch.addEventListener('click', () => {
+      const target = ch.getAttribute('data-jump');
+      const node = $(target);
+      if(node) node.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // Floating buttons
+  $('#toTopBtn').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  $('#toTrackerBtn').addEventListener('click', () => $('#tracker').scrollIntoView({behavior:'smooth', block:'start'}));
+
+  // Print
+  $('#printBtn').addEventListener('click', () => window.print());
+
+  // Expand/collapse all details
+  $('#collapseBtn').addEventListener('click', () => { $$('details').forEach(d => d.open = false); });
+  $('#expandBtn').addEventListener('click', () => { $$('details').forEach(d => d.open = true); });
+
+  // Level persistence
+  const KEY_LEVEL = 'po_retrain_level_v1';
+  const KEY_LOGS  = 'po_retrain_logs_v1';
+
+  function setProgressUI(level){
+    const savedText = $('#savedLevelText');
+    const bar = $('#progressBar');
+    if(level === null || level === undefined || level === ''){
+      savedText.textContent = 'None';
+      bar.style.width = '0%';
+      highlightPlan(null);
+      return;
+    }
+    savedText.textContent = 'Level ' + level;
+    const pct = Math.max(0, Math.min(100, (Number(level) / 6) * 100));
+    bar.style.width = pct.toFixed(0) + '%';
+    highlightPlan(String(level));
+  }
+
+  function highlightPlan(levelStr){
+    $$('[data-level-plan]').forEach(card => {
+      const match = card.getAttribute('data-level-plan') === levelStr;
+      card.style.outline = match ? '2px solid rgba(125,211,252,.55)' : 'none';
+      card.style.background = match
+        ? 'linear-gradient(180deg, rgba(125,211,252,.10), rgba(255,255,255,.03))'
+        : 'rgba(255,255,255,.03)';
+    });
+  }
+
+  function loadLevel(){
+    try{
+      const v = localStorage.getItem(KEY_LEVEL);
+      return (v === null || v === '') ? '' : v;
+    }catch(e){ return ''; }
+  }
+  function saveLevel(v){
+    try{
+      localStorage.setItem(KEY_LEVEL, v);
+    }catch(e){}
+  }
+  function clearLevel(){
+    try{
+      localStorage.removeItem(KEY_LEVEL);
+    }catch(e){}
+  }
+
+  // Initialize level
+  const initial = loadLevel();
+  $('#levelSelect').value = initial || '';
+  setProgressUI(initial || '');
+
+  $('#saveLevelBtn').addEventListener('click', () => {
+    const v = $('#levelSelect').value;
+    if(v === ''){
+      clearLevel();
+      setProgressUI('');
+      toast('Level cleared.');
+      return;
+    }
+    saveLevel(v);
+    setProgressUI(v);
+    toast('Saved Level ' + v + '.');
+  });
+
+  $('#clearLevelBtn').addEventListener('click', () => {
+    $('#levelSelect').value = '';
+    clearLevel();
+    setProgressUI('');
+    toast('Level cleared.');
+  });
+
+  $('#setLevelBtn').addEventListener('click', () => {
+    $('#tracker').scrollIntoView({behavior:'smooth', block:'start'});
+    $('#levelSelect').focus({preventScroll:true});
+  });
+
+  $('#jumpToPlanBtn').addEventListener('click', () => {
+    const v = loadLevel();
+    if(!v){ $('#steps').scrollIntoView({behavior:'smooth', block:'start'}); return; }
+    const card = document.querySelector('[data-level-plan="'+v+'"]');
+    if(card) card.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // Logs
+  function loadLogs(){
+    try{
+      const raw = localStorage.getItem(KEY_LOGS);
+      if(!raw) return [];
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr : [];
+    }catch(e){ return []; }
+  }
+  function saveLogs(logs){
+    try{
+      localStorage.setItem(KEY_LOGS, JSON.stringify(logs));
+    }catch(e){}
+  }
+
+  function fmtDate(d){
+    // user wanted 12OCT or 12OCT2022 format; include year in logs for clarity
+    const months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+    const dd = String(d.getDate()).padStart(2,'0');
+    const mon = months[d.getMonth()];
+    const yyyy = d.getFullYear();
+    const hh = String(d.getHours()).padStart(2,'0');
+    const mm = String(d.getMinutes()).padStart(2,'0');
+    return `${dd}${mon}${yyyy} ${hh}:${mm}`;
+  }
+
+  function renderLogs(){
+    const logs = loadLogs().slice().reverse();
+    const box = $('#logList');
+    if(logs.length === 0){
+      box.textContent = 'No logs yet.';
+      return;
+    }
+    box.innerHTML = logs.slice(0, 12).map(l => {
+      const lvl = (l.level !== undefined && l.level !== null && l.level !== '') ? `Level ${l.level}` : 'Level ?';
+      const amt = l.amount ? escapeHtml(l.amount) : '';
+      const sx  = (l.sx === 0 || l.sx) ? `Sx ${escapeHtml(String(l.sx))}/10` : '';
+      const note= l.note ? escapeHtml(l.note) : '';
+      const when= l.when ? escapeHtml(l.when) : '';
+      return `
+        <div style="padding:10px 12px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,.12);margin:8px 0">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <span class="tag good">${escapeHtml(lvl)}</span>
+            ${amt ? `<span class="tag">${amt}</span>` : ``}
+            ${sx ? `<span class="tag warn">${sx}</span>` : ``}
+            <span class="faint small">${when}</span>
+          </div>
+          ${note ? `<div style="margin-top:6px;color:var(--text)">${note}</div>` : ``}
+        </div>
+      `;
+    }).join('') + (logs.length > 12 ? `<div class="faint small">Showing 12 of ${logs.length} logs.</div>` : ``);
+  }
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  $('#addLogBtn').addEventListener('click', () => {
+    const amount = $('#logAmount').value.trim();
+    const sxRaw = $('#logSx').value.trim();
+    const note = $('#logNote').value.trim();
+    const level = loadLevel() || $('#levelSelect').value || '';
+    const sx = sxRaw === '' ? '' : Math.max(0, Math.min(10, Number(sxRaw)));
+
+    const logs = loadLogs();
+    logs.push({
+      level,
+      amount,
+      sx,
+      note,
+      when: fmtDate(new Date())
+    });
+    saveLogs(logs);
+
+    $('#logAmount').value = '';
+    $('#logSx').value = '';
+    $('#logNote').value = '';
+    renderLogs();
+    toast('Log added.');
+  });
+
+  $('#clearLogsBtn').addEventListener('click', () => {
+    try{ localStorage.removeItem(KEY_LOGS); }catch(e){}
+    renderLogs();
+    toast('Logs cleared.');
+  });
+
+  // Export/Import
+  $('#exportBtn').addEventListener('click', () => {
+    const payload = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      level: loadLevel() || '',
+      logs: loadLogs()
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'po-retrain-export.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+    toast('Exported JSON.');
+  });
+
+  $('#importBtn').addEventListener('click', () => {
+    const inp = document.createElement('input');
+    inp.type = 'file';
+    inp.accept = 'application/json';
+    inp.addEventListener('change', () => {
+      const file = inp.files && inp.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try{
+          const data = JSON.parse(String(reader.result || ''));
+          if(data && typeof data === 'object'){
+            if(data.level !== undefined){
+              const v = String(data.level);
+              if(v === '' || (/^[0-6]$/.test(v))) saveLevel(v);
+            }
+            if(Array.isArray(data.logs)) saveLogs(data.logs);
+            $('#levelSelect').value = loadLevel() || '';
+            setProgressUI(loadLevel() || '');
+            renderLogs();
+            toast('Imported.');
+          }
+        }catch(e){
+          toast('Import failed.');
+        }
+      };
+      reader.readAsText(file);
+    });
+    inp.click();
+  });
+
+  // Toast
+  let toastTimer = null;
+  function toast(msg){
+    let node = document.getElementById('toastNode');
+    if(!node){
+      node = document.createElement('div');
+      node.id = 'toastNode';
+      node.style.position = 'fixed';
+      node.style.left = '50%';
+      node.style.bottom = '18px';
+      node.style.transform = 'translateX(-50%)';
+      node.style.padding = '10px 12px';
+      node.style.borderRadius = '14px';
+      node.style.border = '1px solid rgba(255,255,255,.14)';
+      node.style.background = 'rgba(15,26,51,.92)';
+      node.style.backdropFilter = 'blur(10px)';
+      node.style.boxShadow = '0 12px 30px rgba(0,0,0,.35)';
+      node.style.color = 'white';
+      node.style.fontWeight = '800';
+      node.style.zIndex = '80';
+      document.body.appendChild(node);
+    }
+    node.textContent = msg;
+    node.style.opacity = '1';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>{ node.style.opacity='0'; }, 1400);
+  }
+
+  renderLogs();
+
+})();
+</script>
+</body>
+</html>
