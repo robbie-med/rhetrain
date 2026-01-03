@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PO Retraining: Oral Intake Reconditioning Plan</title>
+  <meta name="description" content="A comprehensive, stepwise plan for regaining oral intake (PO) after prolonged underuse, framed in a physiologic, non-psychiatric nervous-system and GI retraining model." />
+
+  <!-- Page icon (user requested) -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2217/2217851.png" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Chat widget styles -->
+  <link rel="stylesheet" href="assets/css/chat.css" />
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img alt="" src="https://cdn-icons-png.flaticon.com/512/2217/2217851.png">
+        </div>
+        <div class="titleblock">
+          <div class="t1">PO Retraining: One-Stop Reconditioning Plan</div>
+          <div class="t2">Stepwise GI + oropharyngeal + nervous-system reconditioning (non-psychiatric framing)</div>
+        </div>
+      </div>
+
+      <nav class="noPrint" aria-label="page navigation">
+        <span class="chip primary" data-jump="#start">Start</span>
+        <span class="chip" data-jump="#model">Framework</span>
+        <span class="chip" data-jump="#steps">Stepwise Plan</span>
+        <span class="chip" data-jump="#mouth">Mouth/Texture Training</span>
+        <span class="chip" data-jump="#symptoms">Common Sensations</span>
+        <span class="chip" data-jump="#tracker">Tracker</span>
+        <span class="chip danger" data-jump="#safety">Safety</span>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" id="start">
+
+    <div class="grid">
+      <section class="card">
+        <div class="kicker">Purpose</div>
+        <h1>Regain oral intake after underuse without “it’s all in your head” messaging</h1>
+        <p class="muted">
+          This plan is designed for people who believe their difficulty eating is physiologic (dysmotility, neurologic coordination,
+          reflux, post-illness deconditioning, prolonged tube feeding, etc.). It keeps the framing physiologic while still addressing the
+          very real “threat system” and sensory amplification that can block eating.
+        </p>
+
+        <div class="note">
+          <strong>Core idea:</strong> underuse leads to deconditioning across multiple layers (mouth/sensory → swallow coordination → stomach accommodation → gut-brain signaling).
+          Progress is built by <em>graded exposure</em> to safe inputs, with repetition, pacing, and objective progression criteria.
+        </div>
+
+        <div class="progressWrap">
+          <div class="pill">Saved level: <strong id="savedLevelText">None</strong></div>
+          <div class="bar" aria-label="progress bar"><div id="progressBar"></div></div>
+          <div class="pill">Target: <strong id="targetLevelText">Level 6</strong></div>
+        </div>
+
+        <div class="btnrow noPrint">
+          <button class="primary" id="printBtn" title="Print this page">Print</button>
+          <button id="collapseBtn" title="Collapse all details">Collapse all</button>
+          <button id="expandBtn" title="Expand all details">Expand all</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="two">
+          <div>
+            <h3>How to use this page</h3>
+            <ul>
+              <li>Pick your current <strong>Level</strong> (0–6) and follow that level’s daily structure.</li>
+              <li>Use the <strong>progression criteria</strong> to decide when to move up (not willpower).</li>
+              <li>Add the <strong>Mouth/Texture Training</strong> track from day 1 (even before “real meals”).</li>
+              <li>Use the <strong>Common Sensations</strong> section to normalize sensations without dismissing them.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>What success looks like</h3>
+            <ul>
+              <li>Eating becomes less “foregrounded” and less symptom-scanned.</li>
+              <li>Sensations still occur but feel less alarming and less intense.</li>
+              <li>Volume and variety increase because the system adapts.</li>
+              <li>Setbacks happen; you return to structure and keep trend-lines moving.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card flat">
+        <div class="kicker">Quick Start</div>
+        <h2 style="margin-top:6px">Daily micro-structure</h2>
+        <p class="muted small">Use this structure at every level; the <em>content</em> changes as you advance.</p>
+
+        <table class="table" aria-label="daily structure">
+          <thead>
+            <tr>
+              <th>Block</th>
+              <th>What you do</th>
+              <th>Why it works</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1) Warm-up</strong><br><span class="faint small">2–5 min</span></td>
+              <td>Downshift + mouth priming (see tools below).</td>
+              <td>Reduces threat-state, improves swallow coordination, lowers “hypervigilance gain.”</td>
+            </tr>
+            <tr>
+              <td><strong>2) Exposure</strong><br><span class="faint small">5–15 min</span></td>
+              <td>Planned intake (sip/bite schedule) + “hold then swallow” practice.</td>
+              <td>Graded exposure retrains sensory prediction and motor patterning.</td>
+            </tr>
+            <tr>
+              <td><strong>3) Neutral finish</strong><br><span class="faint small">1–2 min</span></td>
+              <td>Stop on plan, log, and do a brief “safe finish” routine.</td>
+              <td>Ends the session without panic escalation; reinforces control + success memory.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Warm-up tools (choose 1–2)</summary>
+          <ul>
+            <li><span class="tag">Breathing</span> 4–6 slow breaths, long exhale (6–8 sec), jaw loose.</li>
+            <li><span class="tag">Posture</span> Sit upright, shoulders down, feet supported.</li>
+            <li><span class="tag">Saliva priming</span> 5 deliberate swallows; small sip of warm water.</li>
+            <li><span class="tag">Mouth map</span> Touch tongue to cheeks/teeth/gums; gentle jaw open/close x 5.</li>
+            <li><span class="tag">Neutral cue</span> Say: “This is training. Sensations are expected and safe.”</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Neutral finish routine</summary>
+          <ul>
+            <li>Stop at the planned endpoint (not when panic peaks).</li>
+            <li>Two slow breaths, one sip of water if desired.</li>
+            <li>Log: amount, sensation score, and a one-line win (“I completed the plan”).</li>
+          </ul>
+        </details>
+      </aside>
+    </div>
+
+    <!-- ... KEEP THE REST OF YOUR EXISTING SECTIONS EXACTLY AS YOU POSTED ... -->
+    <!-- model, steps, mouth, symptoms, tracker, safety, faq, references -->
+
+    <!-- (I’m not repeating the rest to keep this message usable — paste the remainder unchanged) -->
+
+  </div>
+</main>
+
+<div class="stickyTools noPrint" aria-label="quick tools">
+  <button class="fab" id="toTopBtn" title="Back to top" aria-label="Back to top">↑</button>
+  <button class="fab" id="toTrackerBtn" title="Go to tracker" aria-label="Go to tracker">✓</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>copy left robbie.med 2026</div>
+      <div>
+        Made by robbie.med |
+        <a href="https://robbiemed.org" target="_blank" rel="noopener">Contact Me</a> |
+        SDG 2025
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Chatbot widget HTML (bubble + panel) -->
+<button id="poChatBubble" class="poChatBubble noPrint" aria-label="Open chat">💬</button>
+
+<div id="poChatPanel" class="poChatPanel noPrint" role="dialog" aria-label="PO Reconditioning Chat" aria-hidden="true">
+  <div class="poChatHeader">
+    <div>
+      <div class="poChatTitle">PO Retraining Chat</div>
+      <div class="poChatSub">Education only • urgent symptoms → seek care</div>
+    </div>
+    <div class="poChatHeaderBtns">
+      <button id="poChatReset" type="button" class="poChatMiniBtn" title="Reset conversation">↻</button>
+      <button id="poChatClose" type="button" class="poChatMiniBtn" aria-label="Close chat">✕</button>
+    </div>
+  </div>
+
+  <div id="poChatBody" class="poChatBody" aria-live="polite"></div>
+
+  <form id="poChatForm" class="poChatForm">
+    <input id="poChatInput" class="poChatInput" autocomplete="off"
+      placeholder="Symptoms, tube type (PEG vs PEG-J), what you tried…" />
+    <button id="poChatSend" class="poChatSend" type="submit">Send</button>
+  </form>
+
+  <div class="poChatFooterNote">
+    If severe pain, persistent vomiting, blood in vomit/stool, black stools, fainting, confusion, tube dislodgement,
+    inability to flush, or spreading redness/pus at tube site: seek urgent care.
+  </div>
+</div>
+
+<!-- Your site logic -->
+<script src="assets/js/app.js"></script>
+<!-- Chat widget logic -->
+<script src="assets/js/chatbot.js"></script>
+</body>
+</html>
