@@ -1,9 +1,17 @@
+/* Chat bubble + panel (positioned left of the existing stickyTools) */
+
+.poChatBubble, .poChatPanel{
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+/* Move bubble LEFT of your existing stickyTools column */
 .poChatBubble{
   position: fixed;
-  right: 14px;
-  bottom: 78px; /* sits above your existing stickyTools */
-  width: 52px;
-  height: 52px;
+  right: 74px;  /* stickyTools is at right:14px; width ~46px, plus gap */
+  bottom: 14px; /* aligns with stickyTools bottom */
+  width: 46px;
+  height: 46px;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: rgba(15,26,51,.85);
@@ -14,22 +22,14 @@
   place-items: center;
   color: var(--text);
   font-weight: 900;
-  z-index: 70;
 }
 .poChatBubble:hover{ background: rgba(15,26,51,.95); }
 
-.poChatBubble, .poChatPanel{
-  pointer-events: auto;
-  z-index: 99999;
-}
-.stickyTools{
-  z-index: 60; /* keep your existing value lower */
-}
-
+/* Panel opens above the bubble, also shifted left */
 .poChatPanel{
   position: fixed;
-  right: 14px;
-  bottom: 138px;
+  right: 74px;
+  bottom: 74px;
   width: min(440px, calc(100vw - 28px));
   height: min(580px, calc(100vh - 160px));
   display: none;
@@ -40,7 +40,6 @@
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
   overflow: hidden;
-  z-index: 70;
 }
 .poChatPanel.open{ display: flex; }
 
