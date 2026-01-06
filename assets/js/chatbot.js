@@ -10,7 +10,9 @@
   const input  = document.getElementById("poChatInput");
   const sendB  = document.getElementById("poChatSend");
 
-  if(!bubble || !panel || !form) return;
+  if(!bubble || !panel || !form || !bodyEl || !input || !sendB) return;
+
+  bubble.type = "button";
 
   let previous_response_id = localStorage.getItem("po_previous_response_id") || null;
 
@@ -28,10 +30,7 @@
     input.focus();
 
     if (!bodyEl.dataset.greeted){
-      addMsg(
-        "Hi — tell me what you’re tolerating by mouth, whether you have a PEG or PEG-J (if applicable), and what symptoms are limiting you (nausea, vomiting, constipation, pain, reflux).",
-        "bot"
-      );
+      addMsg("Hi — tell me what you’re tolerating by mouth, whether you have a PEG or PEG-J (if applicable), and what symptoms are limiting you (nausea, vomiting, constipation, pain, reflux).", "bot");
       bodyEl.dataset.greeted = "1";
     }
   }
@@ -42,7 +41,6 @@
   }
 
   function formatStructured(r){
-    // If your Worker returns structured JSON, render it nicely
     const lines = [];
     if (r.summary) lines.push(r.summary.trim());
 
@@ -50,22 +48,18 @@
       lines.push("\nWhat to try today:");
       r.plan_bullets.forEach(b => lines.push("• " + b));
     }
-
     if (Array.isArray(r.monitor_bullets) && r.monitor_bullets.length){
       lines.push("\nWhat to monitor:");
       r.monitor_bullets.forEach(b => lines.push("• " + b));
     }
-
     if (Array.isArray(r.when_to_call_clinic) && r.when_to_call_clinic.length){
       lines.push("\nWhen to call your clinic/GI team:");
       r.when_to_call_clinic.forEach(b => lines.push("• " + b));
     }
-
     if (Array.isArray(r.red_flags) && r.red_flags.length){
       lines.push("\nSeek urgent care now if:");
       r.red_flags.forEach(b => lines.push("• " + b));
     }
-
     if (r.disclaimer) lines.push("\n" + r.disclaimer.trim());
     return lines.join("\n");
   }
@@ -85,15 +79,11 @@
       const data = await resp.json();
       if (!resp.ok) throw new Error(data?.error || "Request failed");
 
-      // Save conversation anchor for multi-turn memory
       if (data.previous_response_id){
         previous_response_id = data.previous_response_id;
         localStorage.setItem("po_previous_response_id", previous_response_id);
       }
 
-      // Supports either:
-      // - { result: { ... } } structured
-      // - { text: "..." } simple
       if (data.result && typeof data.result === "object"){
         addMsg(formatStructured(data.result), "bot");
       } else if (typeof data.text === "string" && data.text.trim()){
@@ -104,7 +94,8 @@
         addMsg("(No response returned.)", "bot");
       }
     } catch(e){
-      addMsg("Error: " + e.message, "bot");
+      addMsg("Error: " + (e?.message || String(e)), "bot");
+      console.log(e);
     } finally {
       sendB.disabled = false;
       input.disabled = false;
@@ -112,14 +103,26 @@
     }
   }
 
-  bubble.addEventListener("click", () => {
+  bubble.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (panel.classList.contains("open")) closeChat();
     else openChat();
   });
 
-  closeB.addEventListener("click", closeChat);
+  panel.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
 
-  resetB.addEventListener("click", () => {
+  if(closeB) closeB.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeChat();
+  });
+
+  if(resetB) resetB.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     previous_response_id = null;
     localStorage.removeItem("po_previous_response_id");
     addMsg("Conversation reset.", "bot");
@@ -133,10 +136,8 @@
     send(t);
   });
 
-  // Close when tapping outside (nice on mobile)
-  document.addEventListener("click", (e) => {
+  document.addEventListener("click", () => {
     if (!panel.classList.contains("open")) return;
-    const clickedInside = panel.contains(e.target) || bubble.contains(e.target);
-    if (!clickedInside) closeChat();
+    closeChat();
   });
 })();
